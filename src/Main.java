@@ -1,3 +1,6 @@
+/**
+ * Entry point for the Sudoku program: chooses difficulty, generates a puzzle, and prints it.
+ */
 void main() {
     int[][] board = new int[9][9];
     Random random = new Random();
@@ -5,6 +8,7 @@ void main() {
     System.out.println("1---> Easy\n2---> Medium\n3---> Hard");
     System.out.print("Choose the difficulty: ");
     int x = scanner.nextInt();
+    scanner.close();
 
     switch (x) {
         case 1:
@@ -34,6 +38,9 @@ void main() {
     }
 }
 
+/**
+ * Prints the board to the console with separators every 3 rows and columns.
+ */
 private static void printBoard(int[][] board) {
     for (int row = 0; row < 9; row++) {
         if (row % 3 == 0 && row != 0)
